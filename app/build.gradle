@@ -1,0 +1,79 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        applicationId "com.bj.glz.firsttry"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("$projectDir/key/glz_bj1.jks")
+            storePassword "glz2017"
+            keyAlias "glz_bj1"
+            keyPassword "glz2017"
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            jniDebuggable false
+            debuggable false
+            zipAlignEnabled true
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField("boolean", "isPro", "false")
+            // 是否显示Log
+            buildConfigField("boolean", "isLogDebug", "false")
+        }
+
+        debug {
+            jniDebuggable false
+            debuggable true
+            zipAlignEnabled false
+            minifyEnabled false
+            buildConfigField("boolean", "isPro", "false")
+            // 是否显示Log
+            buildConfigField("boolean", "isLogDebug", "true")
+        }
+    }
+
+    dataBinding {
+        enabled true
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.+'
+    compile project(':speedtestlib')
+    compile('com.crashlytics.sdk.android:crashlytics:2.6.8@aar') {
+        transitive = true;
+    }
+    compile project(path: ':utils')
+}

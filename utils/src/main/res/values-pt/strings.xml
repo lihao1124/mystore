@@ -1,0 +1,5 @@
+<resources>
+    <string name="google_play_not_found">Desculpe,Google Play não encontrado.</string>
+    <string name="not_found_any_email_client">Sem Email disponível</string>
+
+</resources>

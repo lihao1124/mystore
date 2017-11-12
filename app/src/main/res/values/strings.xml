@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Speed Test</string>
+
+    <!--splash-->
+    <string name="product_introduce">Test your network easily.</string>
+
+    <!--main_activity-->
+    <string name="exit_tip">Press again to quit</string>
+    <string name="History">History</string>
+    <string name="setting">Setting</string>
+
+</resources>
