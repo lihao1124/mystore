@@ -7,7 +7,7 @@ import android.view.View;
 import com.bj.glz.firsttry.R;
 import com.bj.glz.firsttry.base.BaseActivity;
 import com.bj.glz.firsttry.databinding.ActivitySplashBinding;
-import com.bj.glz.firsttry.manager.IntentManager;
+import com.bj.glz.firsttry.common.manager.IntentManager;
 
 /**
  * Created by lihao on 2017/10/30.

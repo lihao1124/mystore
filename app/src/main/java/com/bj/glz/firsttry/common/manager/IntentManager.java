@@ -1,4 +1,4 @@
-package com.bj.glz.firsttry.manager;
+package com.bj.glz.firsttry.common.manager;
 
 import android.content.Context;
 import android.content.Intent;
