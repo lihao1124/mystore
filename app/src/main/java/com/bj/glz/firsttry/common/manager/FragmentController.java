@@ -1,12 +1,9 @@
 package com.bj.glz.firsttry.common.manager;
 
-import android.app.Activity;
-import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.text.TextUtils;
 
 import com.bj.glz.firsttry.R;
 import com.bj.glz.firsttry.common.utils.FragmentFactory;
@@ -33,11 +30,17 @@ public class FragmentController {
         private static final FragmentController FRAGMENT_CONTROLLER = new FragmentController();
     }
 
-    public void showFragment(Fragment fragment, String tag) {
+    public void showFragment(Class<Fragment> clazz, String tag) {
         FragmentTransaction transaction = fm.beginTransaction();
         Fragment tab = fm.findFragmentByTag(tag);
         if (tab == null) {
-            transaction.add(R.id.fragment_container, FragmentFactory.getSpeedTestFragment(), tag);
+            try {
+                transaction.add(R.id.fragment_container, clazz.newInstance(), tag);
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
         }else {
             transaction.show(tab);
         }

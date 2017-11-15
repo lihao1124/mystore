@@ -1,5 +1,9 @@
 package com.bj.glz.firsttry.common.utils;
 
+import android.support.v4.app.Fragment;
+
+import com.bj.glz.firsttry.fragment.HistoryFragment;
+import com.bj.glz.firsttry.fragment.SettingFragment;
 import com.bj.glz.firsttry.fragment.SpeedTestFragment;
 
 /**
@@ -7,15 +11,33 @@ import com.bj.glz.firsttry.fragment.SpeedTestFragment;
  */
 
 public class FragmentFactory {
+    public static enum Type {
+        MAIN, HISTORY, SETTING
+    }
 
     private FragmentFactory() {
     }
 
-    public static final SpeedTestFragment getSpeedTestFragment() {
-        return SpeedTestFragmentHolder.INSTANCE;
+    public static Fragment getFragment(Type type) {
+        if (type == Type.MAIN) {
+            return new SpeedTestFragment();
+        } else if (type == Type.HISTORY) {
+            return new HistoryFragment();
+        } else if (type == Type.SETTING) {
+            return new SettingFragment();
+        }
+        return null;
     }
 
-    private static class SpeedTestFragmentHolder {
-        private static final SpeedTestFragment INSTANCE = new SpeedTestFragment();
+    public static Class<? extends Fragment> getFragmentClass(Type type) {
+        if (type == Type.MAIN) {
+            return SpeedTestFragment.class;
+        } else if (type == Type.HISTORY) {
+            return HistoryFragment.class;
+        } else if (type == Type.SETTING) {
+            return SettingFragment.class;
+        }
+        return null;
     }
+
 }
