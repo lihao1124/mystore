@@ -11,25 +11,27 @@ import com.bj.glz.firsttry.fragment.SpeedTestFragment;
  */
 
 public class FragmentFactory {
-    public static enum Type {
-        MAIN, HISTORY, SETTING
+    public class Type {
+        public static final String TAB_MAIN = "tab1";
+        public static final String TAB_HISTORY= "tab2";
+        public static final String TAB_SETTING = "tab3";
     }
 
     private FragmentFactory() {
     }
 
-    public static Fragment getFragment(Type type) {
-        if (type == Type.MAIN) {
+    public static Fragment getFragment(String type) {
+        if (Type.TAB_MAIN.equals(type)) {
             return new SpeedTestFragment();
-        } else if (type == Type.HISTORY) {
+        } else if (Type.TAB_HISTORY.equals(type)) {
             return new HistoryFragment();
-        } else if (type == Type.SETTING) {
+        } else if (Type.TAB_SETTING.equals(type)) {
             return new SettingFragment();
         }
         return null;
     }
 
-    public static Class<? extends Fragment> getFragmentClass(Type type) {
+    /*public static Class<? extends Fragment> getFragmentClass(Type type) {
         if (type == Type.MAIN) {
             return SpeedTestFragment.class;
         } else if (type == Type.HISTORY) {
@@ -38,6 +40,6 @@ public class FragmentFactory {
             return SettingFragment.class;
         }
         return null;
-    }
+    }*/
 
 }

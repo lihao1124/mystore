@@ -12,6 +12,11 @@ import com.bj.glz.firsttry.databinding.FragmentHistoryBinding;
 
 public class HistoryFragment extends BaseFragment<FragmentHistoryBinding> {
     @Override
+    protected void setListener() {
+
+    }
+
+    @Override
     protected void initView(Bundle savedInstanceState) {
 
     }

@@ -32,8 +32,11 @@ public abstract class BaseFragment<T extends ViewDataBinding> extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         dataBinding = DataBindingUtil.inflate(inflater, getLayout(), container, false);
         initView(savedInstanceState);
+        setListener();
         return dataBinding.getRoot();
     }
+
+    protected abstract void setListener();
 
     protected abstract void initView(Bundle savedInstanceState);
 
