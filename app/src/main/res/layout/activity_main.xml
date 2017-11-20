@@ -6,7 +6,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         tools:context="com.bj.glz.firsttry.activity.MainActivity">
 
         <FrameLayout
@@ -25,6 +24,7 @@
             android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/btn_speedtest"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -49,6 +49,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/btn_history"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -73,6 +74,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/btn_setting"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

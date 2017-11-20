@@ -1,1 +1,1 @@
-include ':app', ':speedtestlib', ':utilsdemo', ':utils'
+include ':app', ':speedtestlib', ':utils'
