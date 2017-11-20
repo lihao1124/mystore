@@ -25,7 +25,7 @@ public class SpeedTestFragment extends BaseFragment<FragmentSpeedTestBinding> {
 
     @Override
     protected void initView(Bundle savedInstanceState) {
-        dataBinding.tvTittle.setText("dada");
+
     }
 
     @Override

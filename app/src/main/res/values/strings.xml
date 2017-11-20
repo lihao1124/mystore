@@ -9,4 +9,24 @@
     <string name="History">History</string>
     <string name="setting">Setting</string>
 
+    <!--fragment speed test-->
+    <string name="start_test">Start Test</string>
+    <string name="ping">Ping</string>
+
+    <!--fragment history-->
+    <string name="type">Type</string>
+    <string name="date">Date</string>
+    <string name="up_speed">Upload\nMbps</string>
+    <string name="down_speed">Download\nMbps</string>
+    <string name="ping_unit">Ping\nms</string>
+
+    <!--fragment setting-->
+    <string name="rate_us">Rate Us 5 Stars</string>
+    <string name="unit">Unit</string>
+    <string name="share_us">Share Us</string>
+    <string name="about_us">About Us</string>
+    <string name="feedback">Feedback</string>
+    <string name="policy">Privacy Policy</string>
+
+
 </resources>

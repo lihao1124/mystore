@@ -78,22 +78,22 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> implements V
             case R.id.btn_speedtest:
                 if (hasFocus) {
                     lhFragmentManager.showFragment(FragmentFactory.Type.TAB_MAIN);
-                } else {
-                    lhFragmentManager.hideFragment(FragmentFactory.Type.TAB_MAIN);
+                    lhFragmentManager.hideFragment(FragmentFactory.Type.TAB_HISTORY);
+                    lhFragmentManager.hideFragment(FragmentFactory.Type.TAB_SETTING);
                 }
                 break;
             case R.id.btn_history:
                 if (hasFocus) {
                     lhFragmentManager.showFragment(FragmentFactory.Type.TAB_HISTORY);
-                } else {
-                    lhFragmentManager.hideFragment(FragmentFactory.Type.TAB_HISTORY);
+                    lhFragmentManager.hideFragment(FragmentFactory.Type.TAB_MAIN);
+                    lhFragmentManager.hideFragment(FragmentFactory.Type.TAB_SETTING);
                 }
                 break;
             case R.id.btn_setting:
                 if (hasFocus) {
                     lhFragmentManager.showFragment(FragmentFactory.Type.TAB_SETTING);
-                } else {
-                    lhFragmentManager.hideFragment(FragmentFactory.Type.TAB_SETTING);
+                    lhFragmentManager.hideFragment(FragmentFactory.Type.TAB_HISTORY);
+                    lhFragmentManager.hideFragment(FragmentFactory.Type.TAB_MAIN);
                 }
                 break;
         }

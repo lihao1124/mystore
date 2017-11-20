@@ -6,7 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:background">@color/white</item>
+        <item name="android:background">@color/translate</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowBackground">@color/window_bg</item>
@@ -26,5 +26,18 @@
         <item name="android:activityCloseExitAnimation">@anim/slide_out_to_right</item>
         <item name="android:activityOpenExitAnimation">@anim/slide_out_alpha</item>
         <item name="android:activityCloseEnterAnimation">@anim/slide_in_alpha</item>
+    </style>
+
+    <style name="TabTittle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">3</item>
+        <item name="android:background">@drawable/bg_tabbutton</item>
+        <item name="android:padding">6dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
     </style>
 </resources>
