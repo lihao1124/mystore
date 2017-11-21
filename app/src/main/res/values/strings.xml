@@ -12,6 +12,8 @@
     <!--fragment speed test-->
     <string name="start_test">Start Test</string>
     <string name="ping">Ping</string>
+    <string name="download">Download</string>
+    <string name="upload">Upload</string>
 
     <!--fragment history-->
     <string name="type">Type</string>

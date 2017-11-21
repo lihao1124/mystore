@@ -34,16 +34,19 @@
                 android:layout_weight="1">
 
                 <LinearLayout
+                    android:id="@+id/ll_result"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:paddingBottom="20dp"
                     android:paddingLeft="20dp"
-                    android:paddingRight="20dp">
+                    android:paddingRight="20dp"
+                    android:visibility="gone">
 
 
                     <LinearLayout
+                        android:id="@+id/ll_ping_content"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1000"
@@ -79,6 +82,7 @@
                         android:visibility="gone" />
 
                     <LinearLayout
+                        android:id="@+id/ll_down_content"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1000"
@@ -102,7 +106,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/ping"
+                            android:text="@string/download"
                             android:textColor="@color/white"
                             android:textSize="19sp" />
                     </LinearLayout>
@@ -114,6 +118,7 @@
                         android:visibility="gone" />
 
                     <LinearLayout
+                        android:id="@+id/ll_up_content"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1000"
@@ -137,21 +142,21 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/ping"
+                            android:text="@string/upload"
                             android:textColor="@color/white"
                             android:textSize="19sp" />
                     </LinearLayout>
                 </LinearLayout>
 
                 <Button
+                    android:id="@+id/btn_start"
                     android:layout_width="220dp"
                     android:layout_height="44dp"
                     android:layout_gravity="center"
                     android:background="@drawable/bg_btn_start"
                     android:text="@string/start_test"
                     android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:visibility="gone" />
+                    android:textSize="20sp" />
             </FrameLayout>
 
         </LinearLayout>
