@@ -3,6 +3,7 @@ package com.bj.glz.firsttry.activity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.RadioGroup;
 
 import com.bj.glz.firsttry.R;
 import com.bj.glz.firsttry.base.BaseActivity;
@@ -13,7 +14,7 @@ import com.bj.glz.speedtestlib.SpeedTester;
 import com.wifiyou.utils.Logcat;
 import com.wifiyou.utils.MainThreadPostUtils;
 
-public class MainActivity extends BaseActivity<ActivityMainBinding> implements View.OnClickListener, View.OnFocusChangeListener {
+public class MainActivity extends BaseActivity<ActivityMainBinding> implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
 
     private long lastBackPressedTime = 0;
     private LhFragmentManager lhFragmentManager;
@@ -35,9 +36,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> implements V
 
     @Override
     protected void setListeners() {
-        dataBinding.btnSpeedtest.setOnFocusChangeListener(this);
-        dataBinding.btnHistory.setOnFocusChangeListener(this);
-        dataBinding.btnSetting.setOnFocusChangeListener(this);
+        dataBinding.radioGroup.setOnCheckedChangeListener(this);
     }
 
     @Override
@@ -73,29 +72,24 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> implements V
     }
 
     @Override
-    public void onFocusChange(View v, boolean hasFocus) {
-        switch (v.getId()) {
+    public void onCheckedChanged(RadioGroup group, int checkedId) {
+        switch (group.getCheckedRadioButtonId()){
             case R.id.btn_speedtest:
-                if (hasFocus) {
-                    lhFragmentManager.showFragment(FragmentFactory.Type.TAB_MAIN);
-                    lhFragmentManager.hideFragment(FragmentFactory.Type.TAB_HISTORY);
-                    lhFragmentManager.hideFragment(FragmentFactory.Type.TAB_SETTING);
-                }
+                lhFragmentManager.showFragment(FragmentFactory.Type.TAB_MAIN);
+                lhFragmentManager.hideFragment(FragmentFactory.Type.TAB_HISTORY);
+                lhFragmentManager.hideFragment(FragmentFactory.Type.TAB_SETTING);
                 break;
             case R.id.btn_history:
-                if (hasFocus) {
-                    lhFragmentManager.showFragment(FragmentFactory.Type.TAB_HISTORY);
-                    lhFragmentManager.hideFragment(FragmentFactory.Type.TAB_MAIN);
-                    lhFragmentManager.hideFragment(FragmentFactory.Type.TAB_SETTING);
-                }
+                lhFragmentManager.showFragment(FragmentFactory.Type.TAB_HISTORY);
+                lhFragmentManager.hideFragment(FragmentFactory.Type.TAB_MAIN);
+                lhFragmentManager.hideFragment(FragmentFactory.Type.TAB_SETTING);
                 break;
             case R.id.btn_setting:
-                if (hasFocus) {
-                    lhFragmentManager.showFragment(FragmentFactory.Type.TAB_SETTING);
-                    lhFragmentManager.hideFragment(FragmentFactory.Type.TAB_HISTORY);
-                    lhFragmentManager.hideFragment(FragmentFactory.Type.TAB_MAIN);
-                }
+                lhFragmentManager.showFragment(FragmentFactory.Type.TAB_SETTING);
+                lhFragmentManager.hideFragment(FragmentFactory.Type.TAB_HISTORY);
+                lhFragmentManager.hideFragment(FragmentFactory.Type.TAB_MAIN);
                 break;
         }
     }
+
 }

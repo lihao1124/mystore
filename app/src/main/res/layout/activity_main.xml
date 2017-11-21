@@ -10,93 +10,58 @@
 
         <FrameLayout
             android:id="@+id/fragment_container"
-            android:layout_above="@+id/ll_radio_group"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:layout_above="@+id/radio_group" />
 
-        <LinearLayout
-            android:id="@+id/ll_radio_group"
+        <RadioGroup
+            android:id="@+id/radio_group"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:background="@color/colorPrimary"
-            android:gravity="center_vertical"
+            android:gravity="center"
             android:orientation="horizontal">
 
-            <LinearLayout
+            <RadioButton
                 android:id="@+id/btn_speedtest"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/bg_radiobutton"
-                android:clickable="true"
-                android:focusableInTouchMode="true"
+                android:button="@null"
+                android:checked="true"
+                android:drawableTop="@mipmap/ic_launcher"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
 
-                <ImageView
-                    android:layout_width="26dp"
-                    android:layout_height="26dp"
-                    android:src="@mipmap/ic_launcher" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/translate"
-                    android:text="@string/app_name"
-                    android:textColor="@color/white"
-                    android:textSize="12sp" />
-            </LinearLayout>
-
-            <LinearLayout
+            <RadioButton
                 android:id="@+id/btn_history"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/bg_radiobutton"
-                android:clickable="true"
-                android:focusableInTouchMode="true"
+                android:button="@null"
+                android:drawableTop="@mipmap/ic_launcher"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:text="@string/History"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
 
-                <ImageView
-                    android:layout_width="26dp"
-                    android:layout_height="26dp"
-                    android:src="@mipmap/ic_launcher" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/translate"
-                    android:text="@string/History"
-                    android:textColor="@color/white"
-                    android:textSize="12sp" />
-            </LinearLayout>
-
-            <LinearLayout
+            <RadioButton
                 android:id="@+id/btn_setting"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/bg_radiobutton"
-                android:clickable="true"
-                android:focusableInTouchMode="true"
+                android:button="@null"
+                android:drawableTop="@mipmap/ic_launcher"
                 android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="26dp"
-                    android:layout_height="26dp"
-                    android:src="@mipmap/ic_launcher" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/translate"
-                    android:text="@string/setting"
-                    android:textColor="@color/white"
-                    android:textSize="12sp" />
-            </LinearLayout>
-        </LinearLayout>
+                android:text="@string/setting"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </RadioGroup>
     </RelativeLayout>
 </layout>
